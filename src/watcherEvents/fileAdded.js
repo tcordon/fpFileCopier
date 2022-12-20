@@ -1,3 +1,9 @@
+const _path = require('path')
+
+const config = require('../../cfg/daemon.cfg') // Daemon config
+const { getFilename } = require('../libs/fileUtils')
+const { fileCopy } = require('../libs/fileCopy')
+
 /**
  * Function that is executed when a file is added to the watched folder
  * @param {string} path
@@ -12,7 +18,7 @@ const fileAdded = async (path) => {
 
   /**
    * Callback function callend when file is already copied
-   * @param {import('./libs/fileCopy').callbackArgs} args
+   * @param {import('../libs/fileCopy').callbackArgs} args
    * @returns void
    */
   const fileCopyCallback = (args) => {

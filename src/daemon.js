@@ -1,7 +1,6 @@
 const chokidar = require('chokidar');
 const _path = require('path')
 const config = require('../cfg/daemon.cfg') // Daemon config
-const { getFilename } = require('./libs/fileUtils')
 const { fileCopy } = require('./libs/fileCopy')
 
 // Pid of forked process

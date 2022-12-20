@@ -1,7 +1,11 @@
 /**
  * @typedef {Object} daemonConfig
- * @property {string} orgFolder
- * @property {string} dstFolder
+ * @property {string} orgDataFolder
+ * @property {string} dstDataFolder
+ * @property {string} projectRoot
+ * @property {string} projectSrc
+ * @property {string} projectCfg
+ * @property {string} projectData
  */
 
 const path = require("path")
