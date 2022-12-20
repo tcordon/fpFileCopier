@@ -1,4 +1,5 @@
 const chokidar = require('chokidar')
+const console = require('console')
 const config = require('../cfg/daemon.cfg') // Daemon config
 
 // Pid of forked process

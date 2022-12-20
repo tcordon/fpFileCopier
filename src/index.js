@@ -1,4 +1,5 @@
 // @ts-ignore
+const console = require('console')
 const forever = require('forever')
 const _path = require('path')
 

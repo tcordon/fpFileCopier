@@ -1,3 +1,5 @@
+const console = require('console')
+
 /**
  * Function that is executed when a file is modified in the watched folder
  * @param {string} path

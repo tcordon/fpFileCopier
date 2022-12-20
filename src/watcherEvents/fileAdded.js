@@ -1,4 +1,5 @@
 const _path = require('path')
+const console = require('console')
 
 const config = require('../../cfg/daemon.cfg') // Daemon config
 const { getFilename } = require('../libs/fileUtils')

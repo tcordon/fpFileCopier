@@ -1,3 +1,5 @@
+const console = require('console')
+
 /**
  * Function that is executed when a file is removed from teh watched folder
  * @param {string} path

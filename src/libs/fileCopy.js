@@ -1,4 +1,5 @@
 const fsExtra = require('fs-extra')
+const console = require('console')
 
 /**
  * @typedef {Object} callbackArgs
