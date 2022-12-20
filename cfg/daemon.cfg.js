@@ -8,7 +8,7 @@
  * @property {string} projectData
  */
 
-const path = require("path")
+const path = require('path')
 const projectRoot = process.cwd()
 const projectSrc = path.join(projectRoot, '/src')
 const projectCfg = path.join(projectRoot, '/cfg')

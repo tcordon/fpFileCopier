@@ -23,7 +23,7 @@ const fileAdded = async (path) => {
    */
   const fileCopyCallback = (args) => {
     console.log('[WATCwHER-COPIER] - Callback Args: ', args)
-    setTimeout( () => {
+    setTimeout(() => {
       console.log(`[WATCHER-COPIER] - File ${args.dst} Copied`)
     }, 10000)
   }

@@ -1,7 +1,5 @@
-const chokidar = require('chokidar');
-const _path = require('path')
+const chokidar = require('chokidar')
 const config = require('../cfg/daemon.cfg') // Daemon config
-const { fileCopy } = require('./libs/fileCopy')
 
 // Pid of forked process
 console.log('[WATCHER] child pid', process.pid)
@@ -11,7 +9,7 @@ console.log('[WATCHER] config.orgFolder', config.orgDataFolder)
 console.log('[WATCHER] config.dstFolder', config.dstDataFolder)
 
 // Define Folder Watcher
-var watcher = chokidar.watch(config.orgDataFolder, { persistent: true });
+const watcher = chokidar.watch(config.orgDataFolder, { persistent: true })
 
 /**
  * Define functions to be executed on distinct File Events
