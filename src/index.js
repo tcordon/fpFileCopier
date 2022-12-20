@@ -1,8 +1,10 @@
+// @ts-ignore
 var forever = require('forever');
 
 // Pid of master process
 console.log('[MONITOR] - Monitor pid', process.pid)
 
+// Define a file to run as child process [daemon]
 var child = new forever.Forever(__dirname+'/daemon.js', {
   max: 1,
   silent: false,
@@ -10,7 +12,7 @@ var child = new forever.Forever(__dirname+'/daemon.js', {
 });
 
 const onProcessEnd = () => {
-  console.log('[MONITOR] Ha finalizada la ejecución del Script')
+  console.log('[MONITOR] Script has ended')
   console.log(__dirname)
 }
 
