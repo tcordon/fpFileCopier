@@ -2,7 +2,7 @@
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
   },
   "include": ["src/**/*", "cfg"],
   "exclude": ["node_modules", "**/*.spec.ts"]

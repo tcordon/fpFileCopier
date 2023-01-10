@@ -1,7 +1,7 @@
 // @ts-ignore
-const console = require('console')
-const forever = require('forever')
-const _path = require('path')
+import console from 'console'
+import forever from 'forever'
+import _path from 'path'
 
 // Pid of master process
 console.log('[MONITOR] - Monitor pid', process.pid)

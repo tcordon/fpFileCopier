@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 /**
  * Return filename from a giben Path
@@ -9,6 +9,6 @@ const getFilename = (filePath) => {
   return path.basename(filePath)
 }
 
-module.exports = {
+export {
   getFilename
 }

@@ -1,6 +1,10 @@
-const chokidar = require('chokidar')
-const console = require('console')
-const config = require('../cfg/daemon.cfg') // Daemon config
+import chokidar from 'chokidar'
+import console from 'console'
+
+import config from '../cfg/daemon.cfg' // Daemon config
+import fileAdded from './watcherEvents/fileAdded'
+import fileModified from './watcherEvents/fileModified'
+import fileRemoved from './watcherEvents/fileRemoved'
 
 // Pid of forked process
 console.log('[WATCHER] child pid', process.pid)
@@ -15,9 +19,9 @@ const watcher = chokidar.watch(config.orgDataFolder, { persistent: true })
 /**
  * Define functions to be executed on distinct File Events
  */
-watcher.on('add', require('./watcherEvents/fileAdded'))
-watcher.on('change', require('./watcherEvents/fileModified'))
-watcher.on('unlink', require('./watcherEvents/fileRemoved'))
+watcher.on('add', fileAdded)
+watcher.on('change', fileModified)
+watcher.on('unlink', fileRemoved)
 
 /* This is executed when the watcher has ended scanning a folder */
 watcher.on('ready', () => console.log('[WATCHER] Initial scan complete. Ready for changes'))

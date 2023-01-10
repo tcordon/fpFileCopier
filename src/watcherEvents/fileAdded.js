@@ -1,9 +1,9 @@
-const _path = require('path')
-const console = require('console')
+import _path from 'path'
+import console from 'console'
 
-const config = require('../../cfg/daemon.cfg') // Daemon config
-const { getFilename } = require('../libs/fileUtils')
-const { fileCopy } = require('../libs/fileCopy')
+import config from '../../cfg/daemon.cfg' // Daemon config
+import { getFilename } from '../libs/fileUtils'
+import { fileCopy } from '../libs/fileCopy'
 
 /**
  * Function that is executed when a file is added to the watched folder
@@ -22,13 +22,32 @@ const fileAdded = async (path) => {
    * @param {import('../libs/fileCopy').callbackArgs} args
    * @returns void
    */
-  const fileCopyCallback = (args) => {
-    console.log('[WATCwHER-COPIER] - Callback Args: ', args)
-    setTimeout(() => {
-      console.log(`[WATCHER-COPIER] - File ${args.dst} Copied`)
-    }, 10000)
+  const fileCopyCallBack = (args) => {
+    console.log('[WATCHER-COPIER] - Callback Init: ', args)
+    fileCopy(args.src, args.dst)
   }
-  fileCopy(path, dstFileName, fileCopyCallback)
+
+  /**
+   * Function that simulates a HTTP Request to an Outside endPoint
+   * @param {*} callback
+   */
+  const httpRequestSimulator = (callBack) => {
+    console.log('[httpRequestSimulator] - Start')
+    // Simulate a long timeout HTTP Request
+    setTimeout(() => {
+      callBack()
+      console.log('[httpRequestSimulator] - Fired CallBack()')
+    }, 10000)
+    console.log('[httpRequestSimulator] - Ended')
+  }
+
+  // Make HTTP Call and copy file when ended, with a callback function
+  httpRequestSimulator(() => {
+    fileCopyCallBack({
+      src: path,
+      dst: dstFileName
+    })
+  })
 }
 
-module.exports = fileAdded
+export default fileAdded

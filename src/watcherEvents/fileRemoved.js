@@ -1,4 +1,4 @@
-const console = require('console')
+import console from 'console'
 
 /**
  * Function that is executed when a file is removed from teh watched folder
@@ -6,4 +6,4 @@ const console = require('console')
  */
 const fileRemoved = async (path) => { console.log(`[WATCHER] File "${path}" has been removed`) }
 
-module.exports = fileRemoved
+export default fileRemoved

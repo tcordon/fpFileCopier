@@ -1,5 +1,5 @@
-const fsExtra = require('fs-extra')
-const console = require('console')
+import fsExtra from 'fs-extra'
+import console from 'console'
 
 /**
  * @typedef {Object} callbackArgs
@@ -45,4 +45,6 @@ const fileCopy = async (src, dst, callbackFunction, overwrite = false) => {
   }
 }
 
-module.exports = { fileCopy }
+export {
+  fileCopy
+}

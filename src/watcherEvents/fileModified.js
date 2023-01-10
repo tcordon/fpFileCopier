@@ -1,4 +1,4 @@
-const console = require('console')
+import console from 'console'
 
 /**
  * Function that is executed when a file is modified in the watched folder
@@ -6,4 +6,4 @@ const console = require('console')
  */
 const fileModified = async (path) => { console.log(`[WATCHER] File "${path}" has been modified`) }
 
-module.exports = fileModified
+export default fileModified
