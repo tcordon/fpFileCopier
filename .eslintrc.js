@@ -1,11 +1,11 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 12
+    ecmaVersion: 8
   },
   env: {
     es6: true,
     node: true,
-    mocha: true
+    mocha: false
   },
   rules: {
     'no-console': 'warn',

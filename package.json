@@ -8,7 +8,9 @@
     "daemon": "node ./src/index.js",
     "start": "node src/index.js",
     "ts": "bash ./node_modules/.bin/tsc --checkJs",
-    "lint": "node ./node_modules/eslint/bin/eslint.js ./**/*.js"
+    "lint": "node ./node_modules/eslint/bin/eslint.js ./**/*.js",
+    "babel": "babel src -d dist",
+    "dev": "babel src -d dist --watch"
   },
   "repository": {
     "type": "git",
@@ -25,10 +27,12 @@
     "daemon": "^1.1.0",
     "forever": "^4.0.3",
     "forever-monitor": "^3.0.3",
-    "fs-extra": "^11.1.0",
-    "typescript": "^4.9.4"
+    "fs-extra": "^11.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "@tsconfig/node16": "^1.0.3",
     "@types/forever-monitor": "^1.7.6",
     "@types/fs-extra": "^9.0.13",
@@ -40,6 +44,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-standard": "^5.0.0",
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "typescript": "^4.9.4"
   }
 }
